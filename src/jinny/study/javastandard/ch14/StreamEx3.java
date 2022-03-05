@@ -4,6 +4,10 @@ import java.util.IntSummaryStatistics;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * IntSummaryStatistics
+ * IntStream의 요소값으로 다양한 통계치를 뽑을 수 있다.
+ */
 public class StreamEx3 {
     public static void main(String[] args) {
 
