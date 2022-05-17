@@ -67,8 +67,6 @@ public class TempTest {
 
         System.out.println(dollarFormatter.format(num2));
 
-
-
     }
 
     private static void streamForeachTest() {
@@ -85,8 +83,6 @@ public class TempTest {
                 System.out.println("pass");
             }
         });
-
-
     }
 
 }
