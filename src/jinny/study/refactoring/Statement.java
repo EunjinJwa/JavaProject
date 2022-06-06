@@ -18,7 +18,7 @@ public class Statement {
 
         int totalAmount = 0;
         int volumeCredits = 0;
-        String result = String.format("청구 내역 (고객명: %s)", invoice.customer);
+        String result = String.format("청구 내역 (고객명: %s)\n", invoice.customer);
 
         for (InvoicePerformance perf : invoice.performances) {
             final PlayForm play = plays.get(perf.playID);
@@ -34,7 +34,7 @@ public class Statement {
                 case comedy:
                     thisAmount = 30000;
                     if (perf.audience > 20) {
-                        thisAmount += 10000 + 500 * (perf.audience) - 20;
+                        thisAmount += 10000 + 500 * (perf.audience -20);
                     }
                     thisAmount += 300 * perf.audience;
                     break;
@@ -49,10 +49,10 @@ public class Statement {
                 volumeCredits += Math.floor(perf.audience/5);
 
             // 청구 내역 출력
-            result += String.format("%s: %d (%d)석\n", play.name, thisAmount / 100, perf.audience);
+            result += String.format("%s: %.2f (%d석)\n", play.name, (double) thisAmount / 100, perf.audience);
             totalAmount += thisAmount;
         }
-        result += String.format("총액: %d\n", totalAmount / 100);
+        result += String.format("총액: %.2f\n", (double)totalAmount / 100);
         result += String.format("적립 포인트: %d점\n", volumeCredits);
         return result;
     }
