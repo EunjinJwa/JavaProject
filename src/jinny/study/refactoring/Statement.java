@@ -49,10 +49,10 @@ public class Statement {
                 volumeCredits += Math.floor(perf.audience/5);
 
             // 청구 내역 출력
-            result += String.format("%s: %.2f (%d석)\n", play.name, (double) thisAmount / 100, perf.audience);
+            result += String.format("%s: $%.2f (%d석)\n", play.name, (double) thisAmount / 100, perf.audience);
             totalAmount += thisAmount;
         }
-        result += String.format("총액: %.2f\n", (double)totalAmount / 100);
+        result += String.format("총액: $%.2f\n", (double)totalAmount / 100);
         result += String.format("적립 포인트: %d점\n", volumeCredits);
         return result;
     }
