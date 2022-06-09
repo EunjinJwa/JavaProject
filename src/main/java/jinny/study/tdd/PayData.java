@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Builder
 public class PayData {
 
+    private LocalDate firstBillingDate;
     private LocalDate billingDate;
     private int payAmount;
 
