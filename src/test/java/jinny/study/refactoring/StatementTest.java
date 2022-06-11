@@ -13,7 +13,7 @@ class StatementTest {
                 "Hamlet: $650.00 (55석)\n" +
                 "As You Like It: $580.00 (35석)\n" +
                 "Othello: $500.00 (40석)\n" +
-                "총액: $1730.00\n" +
+                "총액: $1,730.00\n" +
                 "적립 포인트: 47점\n";
 
         Invoice invoice = new Invoice();
@@ -23,10 +23,18 @@ class StatementTest {
         invoice.addPerformance(new InvoicePerformance("othello", 40));
 
         Statement statement = new Statement();
-        String result = statement.statement(invoice, null);
+        String result = statement.statement(invoice);
 
         Assertions.assertThat(resultString).isEqualTo(result);
-        System.out.println(result);
-
     }
+
+    @Test
+    public void modelMapperTest() {
+        InvoicePerformance obj1 = new InvoicePerformance("aa", 100);
+        Statement statement = new Statement();
+        StatementPerformance obj2 = statement.enrichPerformance(obj1);
+
+        Assertions.assertThat(obj1.playID.equals(obj2.playID));
+    }
+
 }
