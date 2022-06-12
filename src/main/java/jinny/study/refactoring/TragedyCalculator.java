@@ -5,7 +5,8 @@ import jinny.study.refactoring.domain.PlayForm;
 
 public class TragedyCalculator extends PerformanceCalculator{
     public TragedyCalculator(InvoicePerformance performance, PlayForm play) {
-        super(performance, play);
+        super.performance = performance;
+        super.play = play;
     }
 
     @Override

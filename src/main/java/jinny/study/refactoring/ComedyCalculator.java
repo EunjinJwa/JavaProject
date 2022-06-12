@@ -2,11 +2,11 @@ package jinny.study.refactoring;
 
 import jinny.study.refactoring.domain.InvoicePerformance;
 import jinny.study.refactoring.domain.PlayForm;
-import jinny.study.refactoring.domain.PlayType;
 
 public class ComedyCalculator extends PerformanceCalculator{
     public ComedyCalculator(InvoicePerformance performance, PlayForm play) {
-        super(performance, play);
+        super.performance = performance;
+        super.play = play;
     }
 
     @Override
