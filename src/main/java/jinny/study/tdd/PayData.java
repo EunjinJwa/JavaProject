@@ -1,6 +1,5 @@
 package jinny.study.tdd;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
