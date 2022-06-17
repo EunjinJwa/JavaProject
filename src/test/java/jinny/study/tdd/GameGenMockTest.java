@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.BDDMockito;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.exceptions.misusing.InvalidUseOfMatchersException;
 
@@ -72,8 +71,21 @@ public class GameGenMockTest {
 
         Assertions.assertThat(mockList.set(3, "apple")).isNull();
         Assertions.assertThat(mockList.set(4, "banana")).isEqualTo("banana");
-
     }
+
+    @Test
+    void init() {
+        GameNumGen gameNumGen = Mockito.mock(GameNumGen.class);
+        Game game = new Game(gameNumGen);
+        game.init(GameLevel.EASY);
+
+        BDDMockito
+                .then(gameNumGen)       // 메서드 호출부를 검증할 모의 객체
+                .should().generate(GameLevel.EASY);     // 실제로 불려야 할 메서드 지정
+    }
+
+
+
 
 
 }
