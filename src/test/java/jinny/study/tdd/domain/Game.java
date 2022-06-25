@@ -1,4 +1,4 @@
-package jinny.study.tdd;
+package jinny.study.tdd.domain;
 
 public class Game {
 

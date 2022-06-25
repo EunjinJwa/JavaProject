@@ -1,5 +1,7 @@
 package jinny.study.tdd;
 
+import jinny.study.tdd.domain.GameLevel;
+import jinny.study.tdd.domain.GameNumGen;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
