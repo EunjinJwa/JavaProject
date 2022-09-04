@@ -5,5 +5,9 @@
 
 
 ```
-도서의 실습 코드 작성 package
+실습 코드 작성 package
 ```
+
+### gitHub
+* https://github.com/slipp/web-application-server : 3~6장 실습 내용
+* https://github.com/slipp/jwp-basic : 6~12장 실습 내용
