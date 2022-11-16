@@ -1,6 +1,8 @@
 package jinny.study.etc;
 
 
+import java.math.BigDecimal;
+
 public class MathTest {
 
 
@@ -10,6 +12,8 @@ public class MathTest {
 
         // 소숫점 n번째 반올림
 //        mathFunction();
+
+        testRake();
 
     }
 
@@ -29,6 +33,17 @@ public class MathTest {
         System.out.println(result1);
         System.out.println(result2);
 
+    }
+
+    public static void testRake() {
+        long buyIn = 34523L;
+        long rake = (long) (buyIn*0.07);
+        System.out.println(rake);
+
+
+
+        BigDecimal a = BigDecimal.valueOf(((double)rake)/1000);
+        System.out.println(a);
     }
 
 }
