@@ -1,6 +1,6 @@
 package jinny.study.utils;
 
-public class EtcUtils {
+public class MamoryUtils {
 
     private static Runtime runtime = Runtime.getRuntime();
 

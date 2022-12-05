@@ -1,7 +1,7 @@
 package jinny.study.heap;
 
 
-import jinny.study.utils.EtcUtils;
+import jinny.study.utils.MamoryUtils;
 
 import java.util.ArrayList;
 
@@ -24,14 +24,14 @@ public class HeapMemoryTest {
      */
     public static void stringBufferTest01() {
         final int max = 5000*1000;
-        EtcUtils.printHeap(0);
+        MamoryUtils.printHeap(0);
 
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < max; i++) {
             sb.append("a");
         }
-        EtcUtils.printHeap(1);  // 19M 정도 사용됨
-        EtcUtils.printHeap(2);
+        MamoryUtils.printHeap(1);  // 19M 정도 사용됨
+        MamoryUtils.printHeap(2);
         System.out.println("====================================");
     }
 
@@ -41,7 +41,7 @@ public class HeapMemoryTest {
      */
     public static void stringBufferTest02() {
         final int max = 5000*1000;
-        EtcUtils.printHeap(0);
+        MamoryUtils.printHeap(0);
 
         StringBuffer sb = new StringBuffer(max);    // StringBuffer 크기를 선언해주면, 메모리를 좀 덜 잡아먹을 수 있음.
         for (int i = 0; i < max; i++) {
@@ -49,8 +49,8 @@ public class HeapMemoryTest {
         }
         byte[] b = sb.toString().getBytes();
         sb = null;              // null 초기화 해줌으로써, CG에서 삭제할 수 있도록 함
-        EtcUtils.printHeap(1);  // 5M 정도 사용됨
-        EtcUtils.printHeap(2);
+        MamoryUtils.printHeap(1);  // 5M 정도 사용됨
+        MamoryUtils.printHeap(2);
         System.out.println("====================================");
     }
 
@@ -60,14 +60,14 @@ public class HeapMemoryTest {
      */
     public static void arrayListTest1() {
         final int max = 5000*1000;
-        EtcUtils.printHeap(0);
+        MamoryUtils.printHeap(0);
 
         ArrayList<String> arr = new ArrayList<>();
         for (int i = 0; i < max; i++) {
             arr.add("a");
         }
-        EtcUtils.printHeap(1);  // 25M 정도 사용됨
-        EtcUtils.printHeap(2);
+        MamoryUtils.printHeap(1);  // 25M 정도 사용됨
+        MamoryUtils.printHeap(2);
         System.out.println("====================================");
     }
 
@@ -77,14 +77,14 @@ public class HeapMemoryTest {
      */
     public static void arrayListTest2() {
         final int max = 5000*1000;
-        EtcUtils.printHeap(0);
+        MamoryUtils.printHeap(0);
 
         ArrayList<String> arr = new ArrayList<>(max + 1);   // size 지정
         for (int i = 0; i < max; i++) {
             arr.add("a");
         }
-        EtcUtils.printHeap(1);  // 20M 정도 사용됨
-        EtcUtils.printHeap(2);
+        MamoryUtils.printHeap(1);  // 20M 정도 사용됨
+        MamoryUtils.printHeap(2);
         System.out.println("====================================");
     }
 
