@@ -1,5 +1,7 @@
 package jinny.study.etc;
 
+import jinny.study.utils.DateUtil;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
@@ -23,12 +25,13 @@ public class LocalDateTimeTest {
 
     @Test
     public void convertTimetampToLocalDateTimeWithZone() {
-        long systemTimeMills = 1670231770000L;      // 2022-12-05 09:16:10.0 KST
-        LocalDateTime localDtForUTC = LocalDateTime.ofInstant(Instant.ofEpochMilli(systemTimeMills), ZoneId.of("UTC"));      // UTC 시간으로 변환
-        System.out.println("localDtForUTC : " + localDtForUTC); // 2022-12-05T09:16:10
+        long systemTimeMills = 1670245200000L;      // 2022-12-05 13:00 UTC
 
-        LocalDateTime localDtForSystem = LocalDateTime.ofInstant(Instant.ofEpochMilli(systemTimeMills), TimeZone.getDefault().toZoneId());
-        System.out.println("localDtForSystem : " + localDtForSystem);   // 2022-12-05T18:16:10
+        LocalDateTime localDtForUTC = DateUtil.convertTimestampToLocalDateTimeWithZone(systemTimeMills, ZoneId.of("UTC"));
+        Assertions.assertThat(localDtForUTC.toString()).isEqualTo("2022-12-05T13:00");
+
+        LocalDateTime localDtForSystemTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(systemTimeMills), TimeZone.getDefault().toZoneId());
+        Assertions.assertThat(localDtForSystemTime.toString()).isEqualTo("2022-12-05T22:00");
     }
 
 }
