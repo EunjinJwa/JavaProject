@@ -7,10 +7,10 @@ import java.time.LocalDate;
 public class DateTest {
 
     public static void main(String[] args) {
-        localDateTest1();
+        dateFormat();
     }
 
-    public static void localDateTest1() {
+    public static void dateFormat() {
         LocalDate today = LocalDate.now();
         System.out.println(today);
 
@@ -23,8 +23,5 @@ public class DateTest {
         System.out.println(formatString);
 
         System.out.println(format.format(1633794654487l));
-
-
-
     }
 }
