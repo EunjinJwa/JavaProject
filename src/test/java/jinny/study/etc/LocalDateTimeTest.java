@@ -8,6 +8,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class LocalDateTimeTest {
@@ -32,6 +33,17 @@ public class LocalDateTimeTest {
 
         LocalDateTime localDtForSystemTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(systemTimeMills), TimeZone.getDefault().toZoneId());
         Assertions.assertThat(localDtForSystemTime.toString()).isEqualTo("2022-12-05T22:00");
+    }
+
+    @Test
+    public void localDateTimeNowTest() {
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+        System.out.println(now.getSecond());
+        System.out.println(now.getSecond()%3==0);
+
+        System.out.println(new Date().getTime());
+        System.out.println(System.currentTimeMillis());
     }
 
 }
