@@ -2,7 +2,7 @@ package jinny.study.designpattern.gumballmachine.server;
 
 public class NoQuarterState implements State {
 
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;        //transient : 직렬화 제외
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
