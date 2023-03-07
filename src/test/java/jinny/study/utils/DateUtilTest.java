@@ -32,4 +32,16 @@ class DateUtilTest {
         System.out.println(DateUtil.localDateTimeToLongTime(ldt));
         System.out.println(DateUtil.localDateTimeToUtcLongTime(ldt));
     }
+
+    @Test
+    public void zoneDateStringTest() {
+        String dateString = "2022-03-26T23:00:46.256Z";
+
+        ZonedDateTime parse = ZonedDateTime.parse(dateString);
+        Timestamp.from(parse.toInstant());
+        System.out.println(parse);
+        System.out.println(parse.toString());
+        System.out.println(parse.toLocalDateTime());
+        System.out.println(parse.toLocalDateTime());
+    }
 }

@@ -13,8 +13,8 @@ public class MathTest {
         // 소숫점 n번째 반올림
 //        mathFunction();
 
-        testRake();
-
+//        testRake();
+        calcMath();
     }
 
 
@@ -46,4 +46,16 @@ public class MathTest {
         System.out.println(a);
     }
 
+    public static void calcMath() {
+        long val1 = 100;
+        float value = 1.5f;
+        long result = (long)Math.ceil(val1 * value);
+        System.out.println(val1 * value);
+        System.out.println(result);
+        System.out.println(Math.round(value));
+        System.out.println(Math.floor(value));
+
+        System.out.println((long)Math.ceil(val1 * value));
+
+    }
 }

@@ -13,6 +13,10 @@ public class Member implements Serializable {
         this.age = age;
     }
 
+    public String getName () {
+        return name;
+    }
+
     @Override
     public String toString () {
         return "Member{" +
