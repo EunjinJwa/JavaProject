@@ -1,5 +1,6 @@
 package jinny.study.etc;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,12 +15,27 @@ public class StreamTest {
 
         String item = stringList.stream().filter(s -> s.equals("ff")).findFirst().orElse(null);
 
-        if (item != null) {
-            System.out.println(item);
-        }
-        System.out.println(item);
-
+        Assertions.assertThat(item).isNull();
     }
 
+    @Test
+    public void findAnyIsPresend() {
+        List<String> stringList = Stream.of("AAA", "BBB", "ccc").collect(Collectors.toList());
+
+        boolean presentTrue = stringList.stream()
+                .filter(x -> x.equals("AAA"))
+                .findAny()
+                .isPresent();
+
+        Assertions.assertThat(presentTrue).isTrue();
+
+        boolean presentFalse = stringList.stream()
+                .filter(x -> x.equals("FFF"))
+                .findAny()
+                .isPresent();
+
+        Assertions.assertThat(presentFalse).isFalse();
+
+    }
 
 }
