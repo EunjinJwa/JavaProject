@@ -1,13 +1,15 @@
 package jinny.study.tdd.domain;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
+@EqualsAndHashCode(of = {"id", "name"})
+@ToString
 @Builder
-@Getter
+@Getter @Setter
 public class User {
     String id;
     String password;
     String name;
     String email;
+    Integer age;
 }
