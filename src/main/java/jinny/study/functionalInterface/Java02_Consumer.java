@@ -27,10 +27,13 @@ public class Java02_Consumer {
         final Consumer<String> consum2 = (value -> System.out.println(value));
         consum2.accept("Hello");
 
+        final Consumer<String> consum3 = System.out::println;
+        consum3.accept("Hello");
+
 
         /** 예제 */
-        final Consumer<String> consum3 = name -> System.out.println("Hello " + name);
-        consum3.accept("kassy");
+        final Consumer<String> consum_exam = name -> System.out.println("Hello " + name);
+        consum_exam.accept("kassy");
 
 
 
