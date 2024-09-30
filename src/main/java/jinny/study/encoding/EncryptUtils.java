@@ -1,4 +1,4 @@
-package jinny.study.encrypt;
+package jinny.study.encoding;
 
 import java.util.Base64;
 
