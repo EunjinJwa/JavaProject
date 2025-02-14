@@ -3,6 +3,7 @@ package jinny.study.junit.mock;
 import jinny.study.junit.Account;
 import jinny.study.junit.AccountManager;
 import jinny.study.junit.AccountService;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -16,7 +17,8 @@ public class AccountServiceMockitoTest {
     @Mock
     private AccountManager mockAccountManager;
 
-    public void testTransferOf() {
+    @Test
+    public void transferOf() {
         // given
         Account senderAccount = new Account("1", 200);
         Account beneficiaryAccount = new Account("2", 100);
